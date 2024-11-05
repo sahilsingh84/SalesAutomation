@@ -14,8 +14,8 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Constants
 EMBEDDING_MODEL = "models/embedding-001"
-FAISS_INDEX_NAME = "faiss_index"
 PDF_DIRECTORY = os.path.join(os.path.dirname(os.path.realpath(__file__)), "files")
+FAISS_INDEX_NAME = os.path.join(os.path.dirname(os.path.realpath(__file__)), "faiss_index")
 
 # Utility functions
 def get_pdf_text(pdf_docs):
@@ -75,7 +75,6 @@ def user_input(user_question):
 # Example usage
 if __name__ == "__main__":
     try:
-        result = user_input("I have fever, cold, and some rashing on my skin. What disease can I have?")
-        # print(result['output_text'])
+        convert_pdfs_to_vectors()
     except Exception as e:
         print(f"Error: {str(e)}")

@@ -17,7 +17,9 @@ def chat():
 
 @app.route('/vectorize', methods=['GET'])
 def vectorize():
+    print("Vectorizing data...")
     convert_pdfs_to_vectors()
+    print("Data vectorized successfully.")
     return jsonify(message="Data vectorized successfully")
 
 @app.route('/summary', methods=['POST'])
