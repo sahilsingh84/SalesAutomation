@@ -1,0 +1,17 @@
+.homepagecontainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.rightpart {
+  width: 20%;
+  background-color: #06367a;
+  overflow: hidden;
+}
+
+.leftpart {
+  width: 80%;
+  background-color: #ebf2fc;
+}

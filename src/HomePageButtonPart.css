@@ -1,0 +1,51 @@
+.leftpartcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.imagepart {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  margin-left: 90px;
+}
+
+.imagepart img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.buttonscontainer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  color: white;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.active {
+  background-color: #00275c;
+}
