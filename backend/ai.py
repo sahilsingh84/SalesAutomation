@@ -33,7 +33,7 @@ def get_vector_store(text_chunks):
 def convert_pdfs_to_vectors(dir_path=PDF_DIRECTORY):
     if not os.path.isdir(dir_path):
         raise ValueError(f"The directory '{dir_path}' does not exist.")
-    
+    all_text_chunks = [] 
     for file_name in os.listdir(dir_path):
         if file_name.endswith(".pdf"):
             file_path = os.path.join(dir_path, file_name)
@@ -41,7 +41,10 @@ def convert_pdfs_to_vectors(dir_path=PDF_DIRECTORY):
             loader = PyPDFLoader(file_path)
             documents = loader.load()
             text_chunks = get_text_chunks(get_pdf_text(documents))
-            get_vector_store(text_chunks)
+            all_text_chunks.extend(text_chunks) 
+    print("Vectorizing combined text chunks...")
+    get_vector_store(all_text_chunks)
+    print("Data vectorized successfully.")
 
 
 def get_conversational_chain():
